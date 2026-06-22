@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pino: A Saga dos Cristais</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+
+        <!-- Tela de Menu -->
+        <div id="menu-screen" class="screen">
+            <h1>Pino: A Saga dos Cristais</h1>
+            <!-- TODO: IMAGEM AQUI - logo do jogo (substituir o <h1> por uma <img>) -->
+            <p>Fase <span id="menu-fase-numero">1</span> de 10</p>
+            <button id="btn-iniciar">Iniciar Jogo</button>
+            <p class="instrucoes">Setas ou WASD para mover | Espaço para pular</p>
+        </div>
+
+        <!-- Tela do Jogo -->
+        <canvas id="game-canvas" width="800" height="450" class="screen" style="display:none;"></canvas>
+
+        <!-- HUD (vidas, moedas, fase) fica desenhado no próprio canvas (ver hud.js) -->
+
+        <!-- Tela de Game Over -->
+        <div id="gameover-screen" class="screen" style="display:none;">
+            <h1>Game Over</h1>
+            <button id="btn-reiniciar">Tentar Novamente</button>
+        </div>
+
+        <!-- Tela de Vitória Final -->
+        <div id="vitoria-screen" class="screen" style="display:none;">
+            <h1>Parabéns! Você completou a aventura!</h1>
+            <button id="btn-jogar-de-novo">Jogar de Novo</button>
+        </div>
+
+    </div>
+
+    <!-- Ordem de carregamento importa: utilitários antes da lógica principal -->
+    <script src="js/input.js"></script>
+    <script src="js/physics.js"></script>
+    <script src="js/camera.js"></script>
+    <script src="js/spritesheet.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/enemy.js"></script>
+    <script src="js/items.js"></script>
+    <script src="js/levels.js"></script>
+    <script src="js/hud.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
